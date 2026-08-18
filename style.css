@@ -4,50 +4,53 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #ec6426;
+  /* background-color: #ec6426; */
   font-family: cursive;
 }
 
 .container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 500px;
+  margin: 0 auto;
 }
 
 .wrapper {
   display: flex;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
 }
 
 #pertanyaan {
-    font-size: 1.3em;
-    font-weight: 500;
+  font-size: 1.3em;
+  font-weight: 500;
 }
 
 input {
-    border: none;
-    background-color: #f8a91f;
-    padding: 10px;
-    margin-top: 10px;
-    font-size: 20px;
+  border: none;
+  background-color: #f8a91f;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 20px;
 }
 
 .row {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
 }
 
 button {
-    border: none;
-    background-color: #632713;
-    color: aliceblue;
-    font-size: 24px;
-    padding: 2px;
-    margin-left: 10px;
-    margin-top: 10px;
-    width: 100px;
-    height: 50px;
-} 
-
+  border: none;
+  background-color: #632713;
+  color: aliceblue;
+  font-size: 24px;
+  padding: 2px;
+  margin-left: 10px;
+  margin-top: 10px;
+  width: 100px;
+  height: 50px;
+}
