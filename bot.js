@@ -1,5 +1,7 @@
 const pertanyaan = document.getElementById("pertanyaan");
 const jawaban = document.getElementById("jawaban");
+const loaders = document.getElementById("loaders");
+const container = document.getElementsByClassName("container");
 
 let init = 0;
 
@@ -17,6 +19,7 @@ pertanyaan.innerHTML = botSay()[0];
 let usersData = [];
 
 function botStart() {
+  if (jawaban.value.length < 1) return alert("silahkan isi jawaban dulu!")
   init++;
   if (init === 1) {
     botDelay({ nama: jawaban.value });
@@ -34,10 +37,13 @@ function botStart() {
 }
 
 function botDelay(jawabanUSer) {
-  console.log({usersData: usersData})
+  loaders.style.display = "block";
+  container[0].style.filter = "blur(8px)";
   setTimeout(() => {
     pertanyaan.innerHTML = botSay(jawabanUSer)[init];
-  }, [1500]);
+    container[0].style.filter = "none"
+    loaders.style.display = "none";
+  }, [1000]);
   usersData.push(jawaban.value);
   jawaban.value = "";
 }
@@ -48,5 +54,6 @@ function finishing() {
 }
 
 function botEnd() {
+  alert(`Terima kasih ${usersData[0]}, Kamu akan di arahkan kehalaman utama...`)
   window.location.reload();
 }
